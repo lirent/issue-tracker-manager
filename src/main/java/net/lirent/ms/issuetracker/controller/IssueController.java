@@ -44,6 +44,7 @@ public class IssueController {
     @DeleteMapping("/{id}") //api/issue/{id}
     public ResponseEntity<Issue> deleteIssue(@PathVariable("id") Long id){
         issueService.deleteIssue(id);
+        //TODO not-found
         return new ResponseEntity<>( HttpStatus.NO_CONTENT);
     }
 
