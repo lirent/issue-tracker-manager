@@ -1,6 +1,6 @@
 # Issue Tracker App using Spring Boot JPA
 
-[![Actions](https://github.com/lirent/issue-tracker-ms-spring-boot-rest-jpa/workflows/Java CI with Maven/badge.svg)](https://github.com/lirent/issue-tracker-ms-spring-boot-rest-jpa/actions)
+[![Actions](https://github.com/lirent/issue-tracker-ms-spring-boot-rest-jpa/workflows/Java%20CI%20with%20Maven/badge.svg)](https://github.com/lirent/issue-tracker-ms-spring-boot-rest-jpa/actions)
 
 
 ## Requirements
