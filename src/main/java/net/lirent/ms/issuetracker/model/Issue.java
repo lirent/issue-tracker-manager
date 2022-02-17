@@ -1,5 +1,7 @@
 package net.lirent.ms.issuetracker.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 
@@ -9,8 +11,9 @@ import java.sql.Timestamp;
  * @author l.pone
  */
 
-
+//TODO overwrite equals and toString
 @Entity
+@Data
 public class Issue {
 
     @Id
@@ -36,24 +39,23 @@ public class Issue {
 
     //TODO refactor on separate class all enums
     public enum Type{
-        BUG,
-        DOCUMENTATION,
-        FEATURE,
-        QUESTION,
-        TASK
+        BUG
+        ,DOCUMENTATION
+        ,FEATURE
+        ,QUESTION
+        ,TASK
     }
     public enum Priority{
-        LOW,
-        MEDIUM,
-        HIGH,
-        CRITICAL,
-        NONE
+        LOW
+        ,MEDIUM
+        ,HIGH
+        ,CRITICAL
     }
     public enum Status{
-        OPEN,
-        CLOSE,
-        TO_DO,
-        IN_PROGRESS,
-        RELEASED
+        OPEN
+        ,CLOSE
+       // ,TO_DO
+       // ,IN_PROGRESS
+       // ,RELEASED
     }
 }
