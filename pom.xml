@@ -9,12 +9,12 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>net.lirent.ms</groupId>
-	<artifactId>issue-tracker-springboot-ms-react-ui</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>issue-tracker-springboot-ms-react-ui</name>
-	<description>Demo project for Spring Boot</description>
+	<artifactId>issue-tracker-ms</artifactId>
+	<version>0.0.2-SNAPSHOT</version>
+	<name>issue-tracker-ms</name>
+	<description>Issue Tracker app with Spring Boot JPA</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
