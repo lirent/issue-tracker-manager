@@ -35,6 +35,7 @@ public class Issue {
     @Enumerated(EnumType.STRING)
     private Status status;
 
+    @Version
     private Timestamp timestamp;
 
     //TODO refactor on separate class all enums

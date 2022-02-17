@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 /**
  * Controller for Issue API
  *
@@ -27,11 +29,11 @@ public class IssueController {
 
     @GetMapping("/{id}") //api/issue/{id}
     public ResponseEntity<Issue> findIssue(@PathVariable("id") long id) {
-        Issue issue = issueService.findIssue(id);
-        if (issue == null) {
+        Optional<Issue> issue = issueService.findIssue(id);
+        if (!issue.isPresent()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<>(issue, HttpStatus.OK);
+        return new ResponseEntity<>(issue.get(), HttpStatus.OK);
     }
 
     @PutMapping

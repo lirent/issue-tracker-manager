@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Implemented Service for Issue
@@ -25,8 +26,8 @@ public class IssueServiceImpl implements IssueService {
     }
 
     @Override
-    public Issue findIssue(Long id) {
-        return issueRepository.getById(id);
+    public Optional<Issue> findIssue(Long id) {
+        return issueRepository.findById(id);
     }
 
     @Override

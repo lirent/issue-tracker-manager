@@ -1,9 +1,9 @@
 package net.lirent.ms.issuetracker.service;
 
 import net.lirent.ms.issuetracker.model.Issue;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Exposed Service for Issue
@@ -25,7 +25,7 @@ public interface IssueService {
      * @param id Issue primary key
      * @return An Issue entity or null if not found
      */
-    Issue findIssue(Long id);
+    Optional<Issue> findIssue(Long id);
 
     /**
      * Update an Issue entity in the data repository
