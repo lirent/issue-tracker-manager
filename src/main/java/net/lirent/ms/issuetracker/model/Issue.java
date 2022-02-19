@@ -27,7 +27,7 @@ public class Issue {
     private String reporter;
 
     @Enumerated(EnumType.STRING)
-    private Type type;
+    private IssueType type;
 
     @Enumerated(EnumType.STRING)
     private Priority priority;
@@ -39,13 +39,6 @@ public class Issue {
     private Timestamp timestamp;
 
     //TODO refactor on separate class all enums
-    public enum Type{
-        BUG
-        ,DOCUMENTATION
-        ,FEATURE
-        ,QUESTION
-        ,TASK
-    }
     public enum Priority{
         LOW
         ,MEDIUM
