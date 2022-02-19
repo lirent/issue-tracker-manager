@@ -33,17 +33,9 @@ public class Issue {
     private IssuePriority priority;
 
     @Enumerated(EnumType.STRING)
-    private Status status;
+    private IssueStatus status;
 
     @Version
     private Timestamp timestamp;
 
-    //TODO refactor on separate class all enums
-    public enum Status{
-        OPEN
-        ,CLOSE
-       // ,TO_DO
-       // ,IN_PROGRESS
-       // ,RELEASED
-    }
 }
