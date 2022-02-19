@@ -1,6 +1,6 @@
 package net.lirent.ms.issuetracker.model;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -11,9 +11,11 @@ import java.sql.Timestamp;
  * @author l.pone
  */
 
-//TODO overwrite equals and toString
 @Entity
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Issue {
 
     @Id
