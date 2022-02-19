@@ -30,7 +30,7 @@ public class Issue {
     private IssueType type;
 
     @Enumerated(EnumType.STRING)
-    private Priority priority;
+    private IssuePriority priority;
 
     @Enumerated(EnumType.STRING)
     private Status status;
@@ -39,12 +39,6 @@ public class Issue {
     private Timestamp timestamp;
 
     //TODO refactor on separate class all enums
-    public enum Priority{
-        LOW
-        ,MEDIUM
-        ,HIGH
-        ,CRITICAL
-    }
     public enum Status{
         OPEN
         ,CLOSE
