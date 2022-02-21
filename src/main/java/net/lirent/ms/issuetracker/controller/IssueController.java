@@ -1,7 +1,10 @@
 package net.lirent.ms.issuetracker.controller;
 
+import lombok.val;
 import net.lirent.ms.issuetracker.model.Issue;
 import net.lirent.ms.issuetracker.service.IssueServiceImpl;
+import net.lirent.ms.issuetracker.util.Utils;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -47,13 +50,22 @@ public class IssueController {
     }
 
     /**
-     *  Update issue "/api/issues"
-     * @param issue RequestBody
+     * Update issue from a given id "api/issues/{id}"
+     * @param issue Issue
+     * @param id issue id from path
      * @return ResponseEntity
      */
-    @PutMapping
-    public ResponseEntity<Issue> updateIssue(@RequestBody Issue issue){
-        return new ResponseEntity<>(issueService.updateIssue(issue), HttpStatus.OK);
+    @PutMapping("/{id}")
+    public ResponseEntity<Issue> updateIssue(@RequestBody Issue issue, @PathVariable("id") Long id){
+        var issueData = issueService.findIssue(id);
+        if(!issueData.isPresent())
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
+        val issueUpdated = issueData.get();
+        val ignoredFields = Utils.getNullPropertyNames(issue);
+        BeanUtils.copyProperties(issue, issueUpdated, ignoredFields);
+
+        return new ResponseEntity<>( issueService.updateIssue(issueUpdated), HttpStatus.OK);
     }
 
     /**
