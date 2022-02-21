@@ -16,14 +16,14 @@ import java.util.Optional;
  */
 
 @RestController
-@RequestMapping("/api/issue")
+@RequestMapping("/api/issues")
 public class IssueController {
 
     @Autowired
     private IssueServiceImpl issueService;
 
     /**
-     * Handles the incoming POST API "api/issue/{id}"
+     * Handles the incoming POST API "api/issues/{id}"
      * @param issue from RequestBody
      * @return ResponseEntity
      */
@@ -33,7 +33,7 @@ public class IssueController {
     }
 
     /**
-     * Find issue from a given Id
+     * Find issue from a given id "api/issues/{id}"
      * @param id Issue Id
      * @return ResponseEntity
      */
@@ -47,7 +47,7 @@ public class IssueController {
     }
 
     /**
-     *  Update issue "/api/issue"
+     *  Update issue "/api/issues"
      * @param issue RequestBody
      * @return ResponseEntity
      */
@@ -57,7 +57,7 @@ public class IssueController {
     }
 
     /**
-     * Delete issue from datastore "api/issue/{id}"
+     * Delete issue from datastore "api/issues/{id}"
      * @param id Issue Id
      * @return ResponseEntity
      */
@@ -69,7 +69,7 @@ public class IssueController {
     }
 
     /**
-     * Get all issues from DB  "/api/issue"
+     * Get all issues from DB  "/api/issues"
      * @return all issues from datastore
      */
     @GetMapping
