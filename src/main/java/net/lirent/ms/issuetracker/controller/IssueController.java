@@ -26,7 +26,7 @@ public class IssueController {
     private IssueServiceImpl issueService;
 
     /**
-     * Handles the incoming POST API "api/issues/{id}"
+     * Handles the incoming POST API "api/issues/"
      * @param issue from RequestBody
      * @return ResponseEntity
      */
@@ -47,6 +47,7 @@ public class IssueController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(issue.get(), HttpStatus.OK);
+        //return issue.map(value -> new ResponseEntity<>(value, HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     /**
@@ -75,8 +76,11 @@ public class IssueController {
      */
     @DeleteMapping("/{id}")
     public ResponseEntity<Issue> deleteIssue(@PathVariable("id") Long id){
+        //issue not-found
+        if(!issueService.findIssue(id).isPresent())
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
         issueService.deleteIssue(id);
-        //TODO not-found
         return new ResponseEntity<>( HttpStatus.NO_CONTENT);
     }
 
