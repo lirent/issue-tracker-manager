@@ -1,4 +1,4 @@
-# Issue Tracker App using Spring Boot JPA
+# Issue Tracker App build with Spring Boot
 
 [![Actions](https://github.com/lirent/issue-tracker-ms-spring-boot-rest-jpa/workflows/Java%20CI%20with%20Maven/badge.svg)](https://github.com/lirent/issue-tracker-ms-spring-boot-rest-jpa/actions)
 
@@ -20,6 +20,35 @@ Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/
 mvn spring-boot:run
 ```
 
+##Explore Rest APIs
+The app defines following REST APIs.
+```
+GET /api/issues/    - Get all issues from DB
+
+POST /api/issues/   - Post a new issue
+
+GET /api/issues/{id}  - Find issue from a given id
+
+PUT /api/issues/{id}  - Update issue from a given id
+
+DELETE /api/issues/{id} - Delete a issue from DB
+```
+You can test them using any rest client.
+
+##Test applications APIs
+To get all the issues, must make a GET request to the following exposed API:
+```
+curl -X GET --header 'Accept: application/json' 'http://localhost:8080/api/issues'
+```
+To add a new Issue, must make a POST request with a ISSUE json in body as follows:
+```
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{"title":"Demo Issue","description":"Demo description","reporter":"Demo User","type":"TASK","priority":"LOW","status":"OPEN"}' 'http://localhost:8080/api/issues'
+```
+
+To delete an issue (example with ID:1), must make e DELETE request to the following API:
+```
+curl -X DELETE --header 'Accept: application/json' 'http://localhost:8080/api/issues/1'
+```
 
 ## Copyright
 
