@@ -25,9 +25,8 @@ public interface IssueService {
      * Update an Issue entity in the data repository
      *
      * @param issueRest An issue entity to persist
-     * @return The persisted issue
      */
-    IssueRest updateIssue(Long issueId, IssueRest issueRest);
+    void updateIssue(Long issueId, IssueRest issueRest);
 
     /**
      * Delete an Issue entity from the data repository

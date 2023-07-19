@@ -30,7 +30,7 @@ public class IssueServiceImpl implements IssueService {
     }
 
     @Override
-    public IssueRest updateIssue(Long issueId, IssueRest issueRest) {
+    public void updateIssue(Long issueId, IssueRest issueRest) {
         Issue issue = issueRepository.findById(issueId)
                 .orElseThrow(() -> new EntityNotFoundException(
                         "Issue with id: %s not found".formatted(issueId)
@@ -42,7 +42,6 @@ public class IssueServiceImpl implements IssueService {
         issue.setReporter(issueRest.getReporter());
         issue.setType(issueRest.getType());
         issueRepository.save(issue);
-        return issueRest;
     }
 
     @Override
