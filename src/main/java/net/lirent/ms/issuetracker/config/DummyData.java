@@ -1,9 +1,9 @@
 package net.lirent.ms.issuetracker.config;
 
-import net.lirent.ms.issuetracker.model.Issue;
-import net.lirent.ms.issuetracker.model.IssuePriority;
-import net.lirent.ms.issuetracker.model.IssueStatus;
-import net.lirent.ms.issuetracker.model.IssueType;
+import net.lirent.ms.issuetracker.model.entity.Issue;
+import net.lirent.ms.issuetracker.model.enums.IssuePriority;
+import net.lirent.ms.issuetracker.model.enums.IssueStatus;
+import net.lirent.ms.issuetracker.model.enums.IssueType;
 import net.lirent.ms.issuetracker.repository.IssueRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
