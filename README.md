@@ -9,7 +9,7 @@ designed to streamline issue tracking and project management.
 
 For building and running the application you need:
 
-- [JDK 174](http://www.oracle.com/technetwork/java/javase/downloads/jdk17-downloads-2133151.html)
+- [JDK 17](http://www.oracle.com/technetwork/java/javase/downloads/jdk17-downloads-2133151.html)
 - [Maven 4](https://maven.apache.org)
 
 ## Running the application locally
