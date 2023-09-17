@@ -1,11 +1,13 @@
 package net.lirent.ms.issuetracker.controller;
 
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import net.lirent.ms.issuetracker.model.dto.IssueRest;
-import net.lirent.ms.issuetracker.service.IssueServiceImpl;
+import net.lirent.ms.issuetracker.service.IssueService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -17,9 +19,10 @@ import java.util.List;
 
  @RestController
  @RequiredArgsConstructor
+ @AllArgsConstructor
 public class IssueControllerV1 implements IssueControllerApiV1{
 
-    private final IssueServiceImpl issueService;
+    private IssueService issueService;
 
     @Override
     public ResponseEntity<IssueRest> findIssueById(Long issueId) {
